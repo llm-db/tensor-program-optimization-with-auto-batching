@@ -1,0 +1,13 @@
+This folder contains all TVM implementations of only the LoRA computations. With `python single_rank.py` functions for both approaches, *sequential* and *GatherBMM* are compiled and executed for the case where all LoRA ranks are the same. The case where multiple different LoRA ranks exist is dealt with separately in the **case_study** folder, which contains its own README. It takes the following parameters (with default values) that can be set using `--<parameter_name>=<value>`:
+- **basemodel** (True): whether or not to include the multiplication with the pretrained weight matrix
+- **batch_size_fix** (True): whether to use constant or dynamic batch size for batch sizes of two or larger. Must be True for the sequential approach, if False only the GatherBMM approach is compiled and executed.
+- **opt_config** (fineinfer-autopeft/tvm/opt_configs/default.json): path to `json` file storing which optional TVM optimizations should be applied
+- **in_features** (4096): dimension of the input
+- **out_features** (4096): dimension of the output
+- **lora_r** (64): LoRA rank
+- **trials** (1): number of trials
+- **batch_size** (1)
+- **request_type** (uniform): LoRA request distribution (distinct, uniform or identical)
+- **measure** (False): whether or not to take latency measurements
+- **measure_dest** (fineinfer-autopeft/measure.txt): path to text file where the measurements are written to
+- **warmup_trials** (3): number of trials that are executed before the trials that are measured

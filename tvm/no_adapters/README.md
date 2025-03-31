@@ -1,0 +1,14 @@
+With `python gen.py` the compilation and execution of the Llama model using TVM can be run. There are the following parameters that can be set with `--<param_name>=<value>` and their default values:
+- **model_name** (meta-llama/Meta-Llama-3.1-8B)
+- **measure** (False): whether or not to take latency measurements
+- **measure_dest** (fineinfer-autopeft/measure.txt): path to text file where the measurements are written to
+- **warmup_trials** (3): number of trials that are executed before the trials that are measured
+- **trials** (1): number of trials
+- **batch_size** (1)
+- **gen_len** (32)
+- **cache_dir** (/scratch/\<user>): where model weights are cached
+- **prompt** (fininfer-autopeft/prompts/default.txt): path to text file storing the prompt
+- **opt_config** (fineinfer-autopeft/tvm/opt_configs/default.json): path to `json` file storing which optional TVM optimizations should be applied
+- **shared_cache** (True): whether or not to use a shared cache for the full batch (has to be True for if **batched_decode** is True)
+- **batched_decode** (True): whether or not to batch the requests for the decode phase
+- **batch_size_fix** (False): whether to use constant or dynamic batch size for batch sizes of two or larger

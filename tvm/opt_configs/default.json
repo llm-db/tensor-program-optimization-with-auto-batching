@@ -1,0 +1,14 @@
+{
+  "FuseTakeMatmul": true,
+  "FuseTransposeMatmul": true,
+  "AnnotateTIROpPattern": true,
+  "FuseOps": true,
+  "FuseTIR": true,
+  "ApplyDefaultSchedule": {
+    "Matmul": true,
+    "GEMV": true,
+    "Reduction": true
+  },
+  "RewriteDataflowReshape": true,
+  "StaticPlanBlockMemory": true
+}
