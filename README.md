@@ -1,4 +1,4 @@
-This repository contains the code for Luca Strässle's master's thesis [Tensor Program Optimization with Auto-Batching]()
+This repository contains the code for Luca Strässle's master's thesis [Tensor Program Optimization with Auto-Batching](https://www.research-collection.ethz.ch/handle/20.500.11850/730387)
 
 # Getting Started
 ```
